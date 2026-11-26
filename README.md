@@ -1,6 +1,6 @@
 # Anas Eslam Selim · Portfolio
 
-Personal portfolio website: an interactive 3D story of academics, athletics, service and a growing interest in programming.
+Personal portfolio website: a clean, fast story of academics, athletics, service and a growing interest in programming.
 
 **Live site:** https://anas-selim1.github.io
 
@@ -9,11 +9,9 @@ Personal portfolio website: an interactive 3D story of academics, athletics, ser
 | Path | What it is |
 |------|------------|
 | `index.html` | The whole page: hero, four story chapters, graduation, contact |
-| `css/style.css` | Design: navy, trophy gold and ivory palette, layout, animations |
-| `js/hero3d.js` | 3D hero: volleyball, basketball and soccer balls orbiting the portrait (Three.js) |
+| `css/style.css` | Design: Graphite palette (near-black, grey gradient, off-white type), layout, subtle animations |
 | `js/playground.js` | Serve simulator: real projectile physics on a volleyball court |
-| `js/main.js` | Scroll reveals, counters, 3D card tilt, photo viewer |
-| `js/vendor/` | Three.js r170 (MIT licence), stored locally so the site never depends on a CDN |
+| `js/main.js` | Scroll reveals, counters, photo viewer |
 | `assets/img/` | Edited photos (WebP + JPG), favicon, social-share image |
 | `assets/Anas_Selim_CV.pdf` | Downloadable CV |
 
@@ -35,4 +33,4 @@ If you name the repository something else (for example `portfolio`), the address
 
 ## Credits
 
-Built with HTML, CSS and JavaScript. 3D by [Three.js](https://threejs.org) (MIT). Icons from Font Awesome Free (CC BY 4.0).
+Built with plain HTML, CSS and JavaScript, no frameworks. Icons from Font Awesome Free (CC BY 4.0).

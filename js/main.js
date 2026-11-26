@@ -1,5 +1,5 @@
-/* Page interactions: nav state, progress bar, reveal-on-scroll, counters,
-   3D tilt cards and the photo lightbox. No dependencies. */
+/* Page interactions: nav state, progress bar, reveal-on-scroll, counters
+   and the photo lightbox. No dependencies. */
 (function () {
   'use strict';
   var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -51,31 +51,22 @@
     entries.forEach(function (e) {
       if (!e.isIntersecting) return;
       e.target.classList.add('in-view');
-      e.target.querySelectorAll('[data-count]').forEach(runCounter);
       revealObserver.unobserve(e.target);
     });
   }, { threshold: 0.18 });
   document.querySelectorAll('.reveal').forEach(function (el, i) {
-    el.style.transitionDelay = (el.parentElement.children.length > 1 ? (i % 4) * 0.08 : 0) + 's';
+    el.style.transitionDelay = (el.parentElement.children.length > 1 ? (i % 4) * 0.06 : 0) + 's';
     revealObserver.observe(el);
   });
 
-  /* ---------- 3D tilt ---------- */
-  var canHover = window.matchMedia('(hover: hover)').matches;
-  if (canHover && !reduceMotion) {
-    document.querySelectorAll('.tilt').forEach(function (el) {
-      var max = parseFloat(el.dataset.tilt || '10');
-      el.addEventListener('pointermove', function (ev) {
-        var r = el.getBoundingClientRect();
-        var x = (ev.clientX - r.left) / r.width;
-        var y = (ev.clientY - r.top) / r.height;
-        el.style.transform = 'perspective(900px) rotateX(' + ((0.5 - y) * max) + 'deg) rotateY(' + ((x - 0.5) * max) + 'deg) translateZ(0)';
-        el.style.setProperty('--gx', (x * 100) + '%');
-        el.style.setProperty('--gy', (y * 100) + '%');
-      });
-      el.addEventListener('pointerleave', function () { el.style.transform = ''; });
+  var countObserver = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (!e.isIntersecting) return;
+      runCounter(e.target);
+      countObserver.unobserve(e.target);
     });
-  }
+  }, { threshold: 0.6 });
+  document.querySelectorAll('[data-count]').forEach(function (el) { countObserver.observe(el); });
 
   /* ---------- Lightbox ---------- */
   var box = document.getElementById('lightbox');

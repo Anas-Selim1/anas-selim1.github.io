@@ -53,6 +53,7 @@
     stats(vx, vy);
     out.result.textContent = 'In the air…';
     out.result.classList.remove('win');
+    kick();
   }
 
   function finish(msg, win) {
@@ -85,10 +86,10 @@
 
   function drawBall(x, y, r, rot) {
     ctx.save(); ctx.translate(x, y); ctx.rotate(rot);
-    ctx.beginPath(); ctx.arc(0, 0, r, 0, Math.PI * 2); ctx.fillStyle = '#F7F4EC'; ctx.fill();
+    ctx.beginPath(); ctx.arc(0, 0, r, 0, Math.PI * 2); ctx.fillStyle = '#F4F4F5'; ctx.fill();
     ctx.clip();
-    ctx.fillStyle = '#F2C230'; ctx.beginPath(); ctx.ellipse(-r * 0.2, -r * 0.9, r * 1.1, r * 0.55, 0.4, 0, Math.PI * 2); ctx.fill();
-    ctx.fillStyle = '#1E3A8A'; ctx.beginPath(); ctx.ellipse(r * 0.4, r * 0.9, r * 1.1, r * 0.55, 0.4, 0, Math.PI * 2); ctx.fill();
+    ctx.fillStyle = '#A1A1AA'; ctx.beginPath(); ctx.ellipse(-r * 0.2, -r * 0.9, r * 1.1, r * 0.55, 0.4, 0, Math.PI * 2); ctx.fill();
+    ctx.fillStyle = '#52525B'; ctx.beginPath(); ctx.ellipse(r * 0.4, r * 0.9, r * 1.1, r * 0.55, 0.4, 0, Math.PI * 2); ctx.fill();
     ctx.restore();
     ctx.beginPath(); ctx.arc(x, y, r, 0, Math.PI * 2); ctx.strokeStyle = 'rgba(0,0,0,.25)'; ctx.lineWidth = 1; ctx.stroke();
   }
@@ -97,44 +98,44 @@
     ctx.clearRect(0, 0, W, H);
     // floor
     var floor = ctx.createLinearGradient(0, groundY, 0, H);
-    floor.addColorStop(0, '#1A3360'); floor.addColorStop(1, '#0E1D3A');
+    floor.addColorStop(0, '#18181B'); floor.addColorStop(1, '#0C0C0D');
     ctx.fillStyle = floor; ctx.fillRect(0, groundY, W, H - groundY);
     // court lines and labels
     var a = toPx(1, 0), n = toPx(NET_X, 0), e = toPx(COURT_END, 0);
-    ctx.fillStyle = 'rgba(212,168,75,.16)'; ctx.fillRect(n[0], groundY, e[0] - n[0], 6);
-    ctx.strokeStyle = 'rgba(245,240,230,.55)'; ctx.lineWidth = 2;
+    ctx.fillStyle = 'rgba(255,255,255,.08)'; ctx.fillRect(n[0], groundY, e[0] - n[0], 6);
+    ctx.strokeStyle = 'rgba(255,255,255,.45)'; ctx.lineWidth = 2;
     ctx.beginPath(); ctx.moveTo(a[0], groundY); ctx.lineTo(e[0], groundY); ctx.stroke();
     [a, e].forEach(function (p) { ctx.beginPath(); ctx.moveTo(p[0], groundY - 6); ctx.lineTo(p[0], groundY + 6); ctx.stroke(); });
-    ctx.font = '12px Inter, system-ui, sans-serif'; ctx.fillStyle = '#94A2BA'; ctx.textAlign = 'center';
+    ctx.font = '11px "JetBrains Mono", ui-monospace, monospace'; ctx.fillStyle = '#71717A'; ctx.textAlign = 'center';
     ctx.fillText('your side', (a[0] + n[0]) / 2, groundY + 26);
-    ctx.fillStyle = '#E8C77A'; ctx.fillText('target: opponent court (9 m)', (n[0] + e[0]) / 2, groundY + 26);
+    ctx.fillStyle = '#D4D4D8'; ctx.fillText('target: opponent court (9 m)', (n[0] + e[0]) / 2, groundY + 26);
     // net
     var top = toPx(NET_X, NET_H);
-    ctx.strokeStyle = 'rgba(245,240,230,.8)'; ctx.lineWidth = 3;
+    ctx.strokeStyle = 'rgba(255,255,255,.75)'; ctx.lineWidth = 3;
     ctx.beginPath(); ctx.moveTo(n[0], groundY); ctx.lineTo(top[0], top[1] - 4); ctx.stroke();
-    ctx.fillStyle = 'rgba(245,240,230,.12)'; ctx.fillRect(n[0] - 4, top[1], 8, scale * 1);
-    ctx.fillStyle = '#F5F0E6'; ctx.fillRect(n[0] - 5, top[1] - 3, 10, 4);
-    ctx.fillStyle = '#94A2BA'; ctx.fillText('2.43 m', n[0], top[1] - 12);
+    ctx.fillStyle = 'rgba(255,255,255,.1)'; ctx.fillRect(n[0] - 4, top[1], 8, scale * 1);
+    ctx.fillStyle = '#FFFFFF'; ctx.fillRect(n[0] - 5, top[1] - 3, 10, 4);
+    ctx.fillStyle = '#71717A'; ctx.fillText('2.43 m', n[0], top[1] - 12);
 
     // predicted path while aiming
     if (drag) {
       var p = predict(drag.vx, drag.vy);
-      ctx.fillStyle = 'rgba(108,196,255,.85)';
+      ctx.fillStyle = 'rgba(255,255,255,.7)';
       p.forEach(function (q, i) { if (i % 2) return; var s = toPx(q[0], q[1]); ctx.beginPath(); ctx.arc(s[0], s[1], 2.2, 0, Math.PI * 2); ctx.fill(); });
       var b = toPx(START.x, START.y);
-      ctx.strokeStyle = 'rgba(232,199,122,.7)'; ctx.setLineDash([5, 5]); ctx.lineWidth = 1.5;
+      ctx.strokeStyle = 'rgba(255,255,255,.35)'; ctx.setLineDash([5, 5]); ctx.lineWidth = 1.5;
       ctx.beginPath(); ctx.moveTo(b[0], b[1]); ctx.lineTo(drag.px, drag.py); ctx.stroke(); ctx.setLineDash([]);
     }
     // trail
     trail.forEach(function (q, i) {
       var s = toPx(q[0], q[1]);
-      ctx.fillStyle = 'rgba(232,199,122,' + (i / trail.length * 0.5) + ')';
+      ctx.fillStyle = 'rgba(255,255,255,' + (i / trail.length * 0.5) + ')';
       ctx.beginPath(); ctx.arc(s[0], s[1], 2 + i / trail.length * 3, 0, Math.PI * 2); ctx.fill();
     });
     // landing marker
     if (landed !== null) {
       var m = toPx(landed, 0);
-      ctx.strokeStyle = out.result.classList.contains('win') ? '#E8C77A' : '#E86A5C'; ctx.lineWidth = 2;
+      ctx.strokeStyle = out.result.classList.contains('win') ? '#FFFFFF' : '#71717A'; ctx.lineWidth = 2;
       ctx.beginPath(); ctx.ellipse(m[0], groundY + 2, 14, 4, 0, 0, Math.PI * 2); ctx.stroke();
     }
     // ball
@@ -142,10 +143,17 @@
     drawBall(bp[0], bp[1], Math.max(9, scale * 0.33), ball.spin);
   }
 
+  // Only animate while the ball is flying or being aimed, so the page stays idle otherwise.
+  var running = false;
   function loop(t) {
     var dt = Math.min((t - last) / 1000, 0.033); last = t;
     step(dt); draw();
-    requestAnimationFrame(loop);
+    if (ball.flying || drag) requestAnimationFrame(loop); else running = false;
+  }
+  function kick() {
+    if (running) return;
+    running = true;
+    requestAnimationFrame(function (t) { last = t; loop(t); });
   }
 
   // pointer interaction (mouse, touch, pen)
@@ -156,6 +164,7 @@
     ball = { x: START.x, y: START.y, vx: 0, vy: 0, flying: false, spin: 0 }; trail = []; landed = null;
     cv.classList.add('is-dragging');
     update(p);
+    kick();
   });
   function update(p) {
     var b = toPx(START.x, START.y);
@@ -169,7 +178,7 @@
   function release() {
     if (!drag) return;
     var d = drag; drag = null; cv.classList.remove('is-dragging');
-    if (Math.hypot(d.vx, d.vy) < 2) { out.result.textContent = 'Pull back further for more power.'; return; }
+    if (Math.hypot(d.vx, d.vy) < 2) { out.result.textContent = 'Pull back further for more power.'; draw(); return; }
     launch(d.vx, d.vy);
   }
   cv.addEventListener('pointerup', release);
@@ -183,7 +192,6 @@
 
   window.addEventListener('resize', resize);
   resize();
-  requestAnimationFrame(function (t) { last = t; loop(t); });
 
   // demo serve the first time the simulator scrolls into view
   var io = new IntersectionObserver(function (es) {

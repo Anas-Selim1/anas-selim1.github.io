@@ -6,7 +6,7 @@
   <title>Anas Eslam Selim | Student · Athlete · Builder</title>
   <meta name="description" content="Portfolio of Anas Eslam Selim, Class of 2026 graduate from Al-Khobar, Saudi Arabia: a perfect 800 on SAT Math, a GPA that rose every year, three sports, and a growing interest in programming.">
   <meta name="author" content="Anas Eslam Selim">
-  <meta name="theme-color" content="#0A1222">
+  <meta name="theme-color" content="#0A0A0A">
 
   <!-- Social sharing preview -->
   <meta property="og:type" content="website">
@@ -18,61 +18,66 @@
   <link rel="icon" type="image/png" href="assets/img/favicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+  <div class="bg" aria-hidden="true"></div>
   <div class="progress" aria-hidden="true"><span id="progress-bar"></span></div>
 
   <!-- ============================ NAV ============================ -->
   <header class="nav" id="nav">
-    <a class="nav__logo" href="#top" aria-label="Back to top">AS</a>
-    <nav class="nav__links" aria-label="Sections">
-      <a href="#climb">Academics</a>
-      <a href="#athletics">Athletics</a>
-      <a href="#service">Service</a>
-      <a href="#curiosity">Curiosity</a>
-      <a href="#contact">Contact</a>
-    </nav>
-    <a class="btn btn--small" href="assets/Anas_Selim_CV.pdf" target="_blank" rel="noopener">Download CV</a>
+    <div class="nav__inner container">
+      <a class="nav__logo" href="#top" aria-label="Back to top"><span class="nav__mark">AS</span>Anas Selim</a>
+      <nav class="nav__links" aria-label="Sections">
+        <a href="#academics">Academics</a>
+        <a href="#athletics">Athletics</a>
+        <a href="#service">Leadership</a>
+        <a href="#code">Code</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <a class="btn btn--small btn--ghost" href="assets/Anas_Selim_CV.pdf" target="_blank" rel="noopener">CV <span aria-hidden="true">↗</span></a>
+    </div>
   </header>
 
   <main id="top">
     <!-- ============================ HERO ============================ -->
     <section class="hero" aria-label="Introduction">
-      <canvas id="hero-canvas" aria-hidden="true"></canvas>
-      <canvas id="orbit-canvas" aria-hidden="true"></canvas>
       <div class="hero__inner container">
         <div class="hero__text">
-          <p class="eyebrow">Class of 2026 · Al-Khobar, Saudi Arabia</p>
-          <h1 class="hero__name">Anas Eslam<br><span class="gold">Selim</span></h1>
-          <p class="hero__roles">Student <i>·</i> Athlete <i>·</i> Builder in the making</p>
-          <p class="hero__lead">A story about steady growth: in the classroom, on the court, and in the way I work with the people around me.</p>
+          <p class="tag"><span class="dot" aria-hidden="true"></span>Class of 2026 · Al-Khobar, Saudi Arabia</p>
+          <h1 class="hero__name">Anas Eslam<br><span class="hero__last">Selim.</span></h1>
+          <p class="hero__lead">Student, athlete and builder in the making. A perfect score in SAT Math, a GPA that rose every year, and three sports that taught me how to lead a team.</p>
           <div class="hero__cta">
-            <a class="btn" href="#climb">Read my story</a>
-            <a class="btn btn--ghost" href="assets/Anas_Selim_CV.pdf" target="_blank" rel="noopener">View CV</a>
+            <a class="btn" href="#academics">Read my story</a>
+            <a class="btn btn--ghost" href="assets/Anas_Selim_CV.pdf" target="_blank" rel="noopener">Download CV</a>
           </div>
         </div>
-        <figure class="hero__portrait tilt" data-tilt="8">
+        <figure class="hero__portrait">
           <picture>
             <source srcset="assets/img/anas-portrait.webp" type="image/webp">
-            <img src="assets/img/anas-portrait.jpg" alt="Portrait of Anas Eslam Selim" width="900" height="900">
+            <img src="assets/img/anas-portrait.jpg" alt="Portrait of Anas Eslam Selim" width="900" height="900" fetchpriority="high">
           </picture>
-          <span class="hero__ring" aria-hidden="true"></span>
+          <figcaption><span>Anas Eslam Selim</span><span>Manarat Al-Khobar · ’26</span></figcaption>
         </figure>
       </div>
-      <a class="hero__scroll" href="#climb" aria-label="Scroll to the story"><span></span></a>
+
+      <div class="container">
+        <dl class="kpis">
+          <div class="kpi"><dt>SAT Math</dt><dd><span data-count="800">800</span><small>/ 800</small></dd></div>
+          <div class="kpi"><dt>Percentile</dt><dd><span data-count="99" data-suffix="th">99th</span><small>+</small></dd></div>
+          <div class="kpi"><dt>Grade 12 GPA</dt><dd><span data-count="3.89" data-decimals="2">3.89</span><small>/ 4.00</small></dd></div>
+          <div class="kpi"><dt>Grade 12 average</dt><dd><span data-count="96.32" data-decimals="2" data-suffix="%">96.32%</span></dd></div>
+        </dl>
+      </div>
     </section>
 
-    <!-- ===================== CHAPTER 01 · ACADEMICS ===================== -->
-    <section class="chapter" id="climb">
+    <!-- ===================== 01 · ACADEMICS ===================== -->
+    <section class="section" id="academics">
       <div class="container">
-        <header class="chapter__head reveal">
-          <span class="chapter__num">01</span>
-          <div>
-            <p class="eyebrow">Academics</p>
-            <h2>The climb</h2>
-          </div>
+        <header class="section__head reveal">
+          <span class="section__num">01 — Academics</span>
+          <h2>The climb.</h2>
         </header>
 
         <div class="split">
@@ -82,160 +87,165 @@
             <p>In June 2026 I scored a <strong>perfect 800 on SAT Math</strong>, above the 99th percentile, with top-band results in all four math areas. It was proof that steady work adds up.</p>
           </div>
 
-          <div class="chart-card reveal" aria-label="GPA by grade">
-            <p class="chart-card__title">GPA by year <span>(out of 4.00)</span></p>
-            <div class="gpa-chart">
-              <div class="gpa-bar" style="--v:2.67"><span class="gpa-bar__val">2.67</span><span class="gpa-bar__fill"></span><span class="gpa-bar__label">Grade 10</span></div>
-              <div class="gpa-bar" style="--v:3.78"><span class="gpa-bar__val">3.78</span><span class="gpa-bar__fill"></span><span class="gpa-bar__label">Grade 11</span></div>
-              <div class="gpa-bar gpa-bar--top" style="--v:3.89"><span class="gpa-bar__val">3.89</span><span class="gpa-bar__fill"></span><span class="gpa-bar__label">Grade 12</span></div>
-            </div>
-            <p class="chart-card__note">Cumulative GPA 3.44 / 4.00 (91.49%) · Cognia-accredited American High School Diploma</p>
-          </div>
-        </div>
-
-        <div class="stats reveal">
-          <div class="stat"><span class="stat__num" data-count="800">0</span><span class="stat__label">SAT Math<br><small>perfect score</small></span></div>
-          <div class="stat"><span class="stat__num" data-count="99" data-prefix=">" data-suffix="th">0</span><span class="stat__label">Percentile<br><small>SAT Math</small></span></div>
-          <div class="stat"><span class="stat__num" data-count="3.89" data-decimals="2">0</span><span class="stat__label">Grade 12 GPA<br><small>out of 4.00</small></span></div>
-          <div class="stat"><span class="stat__num" data-count="96.32" data-decimals="2" data-suffix="%">0</span><span class="stat__label">Grade 12<br><small>average</small></span></div>
+          <figure class="panel chart reveal" aria-label="GPA by year: 2.67 in Grade 10, 3.78 in Grade 11, 3.89 in Grade 12">
+            <figcaption class="panel__head"><span>GPA by year</span><span class="muted">out of 4.00</span></figcaption>
+            <svg class="chart__svg" viewBox="0 0 600 270" role="img" aria-hidden="true">
+              <defs>
+                <linearGradient id="area" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0" stop-color="#fff" stop-opacity=".16"/>
+                  <stop offset="1" stop-color="#fff" stop-opacity="0"/>
+                </linearGradient>
+              </defs>
+              <g class="chart__grid">
+                <line x1="40" x2="580" y1="20" y2="20"/><text x="0" y="24">4.0</text>
+                <line x1="40" x2="580" y1="86.7" y2="86.7"/><text x="0" y="91">3.5</text>
+                <line x1="40" x2="580" y1="153.3" y2="153.3"/><text x="0" y="158">3.0</text>
+                <line x1="40" x2="580" y1="220" y2="220"/><text x="0" y="224">2.5</text>
+              </g>
+              <path class="chart__area" d="M80 197.3 L310 49.3 L540 34.7 L540 220 L80 220 Z" fill="url(#area)"/>
+              <path class="chart__line" d="M80 197.3 L310 49.3 L540 34.7" pathLength="1"/>
+              <g class="chart__pts">
+                <circle cx="80" cy="197.3" r="5"/><circle cx="310" cy="49.3" r="5"/><circle class="is-top" cx="540" cy="34.7" r="6"/>
+              </g>
+              <g class="chart__vals">
+                <text x="80" y="180">2.67</text><text x="310" y="32">3.78</text><text x="540" y="17">3.89</text>
+              </g>
+              <g class="chart__x">
+                <text x="80" y="256">Grade 10</text><text x="310" y="256">Grade 11</text><text x="540" y="256">Grade 12</text>
+              </g>
+            </svg>
+            <p class="panel__note">Cumulative GPA 3.44 / 4.00 (91.49%) · Cognia-accredited American High School Diploma</p>
+          </figure>
         </div>
 
         <div class="subjects reveal">
-          <p class="subjects__title">Grade 12 highlights</p>
-          <div class="subject" style="--p:100"><span>Economics</span><span class="subject__bar"><i></i></span><b>100%</b></div>
-          <div class="subject" style="--p:97.8"><span>Chemistry</span><span class="subject__bar"><i></i></span><b>97.8%</b></div>
-          <div class="subject" style="--p:96"><span>Computer Science</span><span class="subject__bar"><i></i></span><b>96.0%</b></div>
-          <div class="subject" style="--p:95"><span>Physics</span><span class="subject__bar"><i></i></span><b>95.0%</b></div>
-          <div class="subject" style="--p:94"><span>Biology</span><span class="subject__bar"><i></i></span><b>94.0%</b></div>
-          <div class="subject" style="--p:93.8"><span>English</span><span class="subject__bar"><i></i></span><b>93.8%</b></div>
+          <p class="label">Grade 12 highlights</p>
+          <ul>
+            <li style="--p:100"><span>Economics</span><i></i><b>100%</b></li>
+            <li style="--p:97.8"><span>Chemistry</span><i></i><b>97.8%</b></li>
+            <li style="--p:96"><span>Computer Science</span><i></i><b>96.0%</b></li>
+            <li style="--p:95"><span>Physics</span><i></i><b>95.0%</b></li>
+            <li style="--p:94"><span>Biology</span><i></i><b>94.0%</b></li>
+            <li style="--p:93.8"><span>English</span><i></i><b>93.8%</b></li>
+          </ul>
         </div>
       </div>
     </section>
 
-    <!-- ===================== CHAPTER 02 · ATHLETICS ===================== -->
-    <section class="chapter chapter--alt" id="athletics">
+    <!-- ===================== 02 · ATHLETICS ===================== -->
+    <section class="section" id="athletics">
       <div class="container">
-        <header class="chapter__head reveal">
-          <span class="chapter__num">02</span>
-          <div>
-            <p class="eyebrow">Athletics &amp; Leadership</p>
-            <h2>Three sports, one mindset</h2>
-          </div>
+        <header class="section__head reveal">
+          <span class="section__num">02 — Athletics</span>
+          <h2>Three sports, one mindset.</h2>
         </header>
 
-        <p class="story story--wide lead reveal">Sport taught me what grades alone cannot: how to prepare, how to read a game while it is happening, and how to keep a team together when the score is close.</p>
+        <p class="lead lead--wide reveal">Sport taught me what grades alone cannot: how to prepare, how to read a game while it is happening, and how to keep a team together when the score is close.</p>
 
         <div class="sports">
-          <article class="sport tilt reveal" data-tilt="6">
-            <span class="sport__icon" aria-hidden="true">🏐</span>
-            <h3>Volleyball</h3>
-            <p class="sport__meta">Manarat Al-Khobar · 2024–2026</p>
-            <p>Helped lead the team to <strong>first place</strong> in the school tournament and was named <strong>Best Player</strong>. I watched opposing teams for weaknesses during matches and helped teammates adjust tactics.</p>
+          <article class="sport reveal">
+            <p class="sport__meta"><span>Volleyball</span><span>2024–26</span></p>
+            <p class="sport__result">1st place · Best Player</p>
+            <p>Helped lead the Manarat Al-Khobar team to first place in the school tournament and was named Best Player. I watched opposing teams for weaknesses during matches and helped teammates adjust tactics.</p>
           </article>
-          <article class="sport tilt reveal" data-tilt="6">
-            <span class="sport__icon" aria-hidden="true">🏀</span>
-            <h3>Basketball</h3>
-            <p class="sport__meta">Manarat Al-Khobar · 2024–2026</p>
-            <p>Player and team leader. I took on leadership during games and practices and kept teammates organized and motivated. Basketball also earned me a gold medal.</p>
+          <article class="sport reveal">
+            <p class="sport__meta"><span>Basketball</span><span>2024–26</span></p>
+            <p class="sport__result">Team leader · Gold medal</p>
+            <p>Player and team leader at Manarat Al-Khobar. I took on leadership during games and practices and kept teammates organized and motivated. Basketball also earned me a gold medal.</p>
           </article>
-          <article class="sport tilt reveal" data-tilt="6">
-            <span class="sport__icon" aria-hidden="true">⚽</span>
-            <h3>Soccer</h3>
-            <p class="sport__meta">SAYSO Dhahran · 2021–2022</p>
-            <p>Won the <strong>2021–22 SAYSO Dhahran Championship</strong> with the Saudi Aramco Youth Soccer Organization, along with two gold medals and two youth soccer trophies.</p>
+          <article class="sport reveal">
+            <p class="sport__meta"><span>Soccer</span><span>2021–22</span></p>
+            <p class="sport__result">SAYSO Dhahran Champion</p>
+            <p>Won the 2021–22 SAYSO Dhahran Championship with the Saudi Aramco Youth Soccer Organization, along with two gold medals and two youth soccer trophies.</p>
           </article>
         </div>
 
-        <div class="award-banner reveal">
-          <span class="award-banner__icon" aria-hidden="true">★</span>
-          <div>
-            <p class="award-banner__title">Most Athletic, Class of 2026</p>
-            <p class="award-banner__sub">Certificate of Achievement · Manarat Al-Khobar International School</p>
-          </div>
+        <div class="award reveal">
+          <p class="label">Award</p>
+          <p class="award__title">Most Athletic, Class of 2026</p>
+          <p class="award__sub">Certificate of Achievement · Manarat Al-Khobar International School</p>
         </div>
 
-        <h3 class="cabinet__title reveal">The trophy cabinet</h3>
-        <p class="cabinet__hint reveal">Move your cursor over a card to tilt it, or tap to view it full size.</p>
-        <div class="cabinet">
-          <button class="trophy tilt reveal" data-tilt="12" data-full="assets/img/volleyball-best-player.jpg" data-caption="Best Player trophy, School Volleyball Tournament">
+        <div class="gallery">
+          <button class="shot reveal" data-full="assets/img/volleyball-best-player.jpg" data-caption="Best Player trophy, School Volleyball Tournament">
             <picture><source srcset="assets/img/volleyball-best-player.webp" type="image/webp"><img src="assets/img/volleyball-best-player.jpg" alt="Crystal Best Player volleyball trophy" loading="lazy" width="900" height="1125"></picture>
-            <span class="trophy__cap"><b>Best Player</b>School Volleyball Tournament</span>
+            <span class="shot__cap"><b>Best Player</b>School Volleyball Tournament</span>
           </button>
-          <button class="trophy tilt reveal" data-tilt="12" data-full="assets/img/sayso-championship-cup.jpg" data-caption="SAYSO Dhahran Championship Cup, 2021–22">
+          <button class="shot reveal" data-full="assets/img/sayso-championship-cup.jpg" data-caption="SAYSO Dhahran Championship Cup, 2021–22">
             <picture><source srcset="assets/img/sayso-championship-cup.webp" type="image/webp"><img src="assets/img/sayso-championship-cup.jpg" alt="Gold and silver SAYSO Dhahran championship cup" loading="lazy" width="900" height="1125"></picture>
-            <span class="trophy__cap"><b>Championship Cup</b>SAYSO Dhahran · 2021–22</span>
+            <span class="shot__cap"><b>Championship Cup</b>SAYSO Dhahran · 2021–22</span>
           </button>
-          <button class="trophy tilt reveal" data-tilt="12" data-full="assets/img/gold-medals.jpg" data-caption="Two SAYSO Dhahran 2021–2022 gold medals and a basketball gold medal">
+          <button class="shot reveal" data-full="assets/img/gold-medals.jpg" data-caption="Two SAYSO Dhahran 2021–2022 gold medals and a basketball gold medal">
             <picture><source srcset="assets/img/gold-medals.webp" type="image/webp"><img src="assets/img/gold-medals.jpg" alt="Three gold medals: two SAYSO Dhahran 2021–2022 soccer medals and one basketball medal" loading="lazy" width="900" height="1092"></picture>
-            <span class="trophy__cap"><b>Gold Medals</b>2 soccer (SAYSO) · 1 basketball</span>
+            <span class="shot__cap"><b>Gold Medals</b>2 soccer (SAYSO) · 1 basketball</span>
           </button>
-          <button class="trophy tilt reveal" data-tilt="12" data-full="assets/img/aramco-youth-soccer-trophies.jpg" data-caption="Two Saudi Aramco Youth Soccer trophies">
+          <button class="shot reveal" data-full="assets/img/aramco-youth-soccer-trophies.jpg" data-caption="Two Saudi Aramco Youth Soccer trophies">
             <picture><source srcset="assets/img/aramco-youth-soccer-trophies.webp" type="image/webp"><img src="assets/img/aramco-youth-soccer-trophies.jpg" alt="Two copper Saudi Aramco Youth Soccer trophies" loading="lazy" width="900" height="1125"></picture>
-            <span class="trophy__cap"><b>Youth Soccer Trophies</b>Saudi Aramco Youth Soccer</span>
+            <span class="shot__cap"><b>Youth Soccer Trophies</b>Saudi Aramco Youth Soccer</span>
           </button>
         </div>
       </div>
     </section>
 
-    <!-- ===================== CHAPTER 03 · SERVICE ===================== -->
-    <section class="chapter" id="service">
+    <!-- ===================== 03 · LEADERSHIP & SERVICE ===================== -->
+    <section class="section" id="service">
       <div class="container">
-        <header class="chapter__head reveal">
-          <span class="chapter__num">03</span>
-          <div>
-            <p class="eyebrow">Service &amp; Leadership</p>
-            <h2>Beyond the scoreboard</h2>
-          </div>
+        <header class="section__head reveal">
+          <span class="section__num">03 — Leadership &amp; Service</span>
+          <h2>Beyond the scoreboard.</h2>
         </header>
 
         <div class="split split--top">
-          <div class="cards">
-            <article class="card reveal">
-              <p class="card__kicker">Community · Dhahran</p>
+          <ol class="list">
+            <li class="reveal">
+              <p class="list__meta">Community · Dhahran</p>
               <h3>Event volunteer, Saudi Aramco Community</h3>
               <p>Helped organize activities at a community park event and assisted visitors alongside a team of volunteers.</p>
-            </article>
-            <article class="card reveal">
-              <p class="card__kicker">School · 2023–2026</p>
+            </li>
+            <li class="reveal">
+              <p class="list__meta">School · 2023–2026</p>
               <h3>Charity and service initiatives</h3>
               <p>Gave time to school-supported charitable activities and service initiatives at Manarat Al-Khobar.</p>
-            </article>
-            <article class="card reveal">
-              <p class="card__kicker">Classroom · 2023–2026</p>
+            </li>
+            <li class="reveal">
+              <p class="list__meta">Classroom · 2023–2026</p>
               <h3>Group project leader</h3>
               <p>When group work lacked structure, I stepped in: divided the tasks, assigned roles and kept the team on schedule to the finish.</p>
-            </article>
-          </div>
+            </li>
+          </ol>
 
           <blockquote class="quote reveal">
             <p>“Consistency, humility, teamwork, and a willingness to grow.”</p>
-            <footer>From my recommendation letter, Head of Academics,<br>Manarat Al-Khobar International School</footer>
+            <footer>From my recommendation letter<br><span>Head of Academics, Manarat Al-Khobar International School</span></footer>
           </blockquote>
         </div>
       </div>
     </section>
 
-    <!-- ===================== CHAPTER 04 · CURIOSITY ===================== -->
-    <section class="chapter chapter--code" id="curiosity">
+    <!-- ===================== 04 · CODE ===================== -->
+    <section class="section" id="code">
       <div class="container">
-        <header class="chapter__head reveal">
-          <span class="chapter__num">04</span>
-          <div>
-            <p class="eyebrow">Curiosity</p>
-            <h2>Where math meets code</h2>
-          </div>
+        <header class="section__head reveal">
+          <span class="section__num">04 — Curiosity</span>
+          <h2>Where math meets code.</h2>
         </header>
 
-        <p class="story story--wide lead reveal">Math has always been my strongest subject, and Computer Science was one of my best grades in Grade 12. Programming is where those two meet, and it is what I am exploring next.</p>
+        <p class="lead lead--wide reveal">Math has always been my strongest subject, and Computer Science was one of my best grades in Grade 12. Programming is where those two meet, and it is what I am exploring next.</p>
 
-        <div class="playground reveal">
+        <div class="playground panel reveal">
           <div class="playground__stage">
+            <div class="panel__head"><span>Serve simulator</span><span class="muted">drag back from the ball, then release</span></div>
             <canvas id="playground" aria-label="Interactive projectile demo: drag to aim and release to launch a ball"></canvas>
-            <p class="playground__hint">Drag back from the ball, then release to serve it over the net.</p>
+            <dl class="readout">
+              <div><dt>Speed</dt><dd id="r-speed">–</dd></div>
+              <div><dt>Angle</dt><dd id="r-angle">–</dd></div>
+              <div><dt>Peak</dt><dd id="r-peak">–</dd></div>
+              <div><dt>Reach</dt><dd id="r-reach">–</dd></div>
+            </dl>
+            <p class="readout__result" id="r-result">Serve the ball to see the physics.</p>
           </div>
-          <div class="playground__side">
-            <div class="code">
-              <div class="code__bar"><i></i><i></i><i></i><span>serve.py</span></div>
+          <div class="code">
+            <div class="code__bar"><i></i><i></i><i></i><span>serve.py</span></div>
 <pre><code><span class="k">import</span> math
 
 <span class="k">def</span> <span class="f">serve</span>(speed, angle_deg, h=<span class="n">2.6</span>, g=<span class="n">9.81</span>):
@@ -249,37 +259,29 @@
     <span class="k">return</span> peak, reach
 
 <span class="f">print</span>(serve(<span class="n">12</span>, <span class="n">30</span>))  <span class="c"># (4.43, 16.2)</span></code></pre>
-            </div>
-            <dl class="readout">
-              <div><dt>Speed</dt><dd id="r-speed">–</dd></div>
-              <div><dt>Angle</dt><dd id="r-angle">–</dd></div>
-              <div><dt>Peak</dt><dd id="r-peak">–</dd></div>
-              <div><dt>Reach</dt><dd id="r-reach">–</dd></div>
-            </dl>
-            <p class="readout__result" id="r-result">Serve the ball to see the physics.</p>
           </div>
         </div>
 
         <div class="interests">
           <article class="interest reveal">
-            <span class="interest__tag">Programming</span>
+            <p class="list__meta">Programming</p>
             <h3>Learning Python</h3>
             <p>Writing small programs that turn the physics and math I studied into working tools, like the serve simulator above.</p>
           </article>
           <article class="interest reveal">
-            <span class="interest__tag">Problem-solving</span>
+            <p class="list__meta">Problem-solving</p>
             <h3>Math first</h3>
             <p>A perfect SAT Math score and top marks in Chemistry and Physics. I like problems that have a clear right answer and many ways to reach it.</p>
           </article>
           <article class="interest reveal">
-            <span class="interest__tag">Media</span>
+            <p class="list__meta">Media</p>
             <h3>Video editing</h3>
             <p>Editing video and media content: telling a story frame by frame, with the same attention to detail I bring to sport.</p>
           </article>
           <article class="interest interest--photo reveal">
             <picture><source srcset="assets/img/padel.webp" type="image/webp"><img src="assets/img/padel.jpg" alt="Anas serving on an outdoor padel court at night" loading="lazy" width="720" height="900"></picture>
             <div class="interest__overlay">
-              <span class="interest__tag">Off the clock</span>
+              <p class="list__meta">Off the clock</p>
               <h3>Padel</h3>
               <p>Always learning a new sport.</p>
             </div>
@@ -290,37 +292,38 @@
 
     <!-- ===================== GRADUATION ===================== -->
     <section class="grad" aria-label="Graduation">
-      <picture>
-        <source srcset="assets/img/graduation-ceremony.webp" type="image/webp">
-        <img src="assets/img/graduation-ceremony.jpg" alt="Anas receiving his graduation plaque on stage at the Manarat Al-Khobar High School Graduation Ceremony, 2026" loading="lazy" width="1280" height="853">
-      </picture>
-      <div class="grad__text container reveal">
-        <p class="eyebrow">June 2026</p>
-        <h2>Chapter one, complete.</h2>
-        <p>High School Graduation Ceremony, Manarat Al-Khobar International School. Next: university, and a lot more to learn.</p>
+      <div class="container">
+        <figure class="grad__frame reveal">
+          <picture>
+            <source srcset="assets/img/graduation-ceremony.webp" type="image/webp">
+            <img src="assets/img/graduation-ceremony.jpg" alt="Anas receiving his graduation plaque on stage at the Manarat Al-Khobar High School Graduation Ceremony, 2026" loading="lazy" width="1280" height="853">
+          </picture>
+          <figcaption class="grad__text">
+            <p class="label">June 2026</p>
+            <h2>Chapter one, complete.</h2>
+            <p>High School Graduation Ceremony, Manarat Al-Khobar International School. Next: university, and a lot more to learn.</p>
+          </figcaption>
+        </figure>
       </div>
     </section>
 
     <!-- ===================== CONTACT ===================== -->
     <section class="contact" id="contact">
-      <div class="container contact__inner reveal">
-        <p class="eyebrow">Get in touch</p>
-        <h2>Let’s talk.</h2>
+      <div class="container reveal">
+        <p class="label">Get in touch</p>
+        <h2 class="contact__title">Let’s talk.</h2>
         <p class="contact__lead">For admissions, coaching or anything else, I would be glad to hear from you.</p>
+        <a class="contact__mail" href="mailto:anaoosa1121@gmail.com">anaoosa1121@gmail.com <span aria-hidden="true">↗</span></a>
         <div class="contact__links">
-          <a class="contact__link" href="mailto:anaoosa1121@gmail.com">
-            <svg viewBox="0 0 512 512" aria-hidden="true"><path d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4L236.8 313.6c11.4 8.5 27 8.5 38.4 0L492.8 150.4c12.1-9.1 19.2-23.3 19.2-38.4c0-26.5-21.5-48-48-48L48 64zM0 176L0 384c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-208L294.4 339.2c-22.8 17.1-54 17.1-76.8 0L0 176z"/></svg>
-            Email
-          </a>
-          <a class="contact__link" href="https://www.linkedin.com/in/anas-selim1/" target="_blank" rel="noopener">
+          <a class="chip" href="https://www.linkedin.com/in/anas-selim1/" target="_blank" rel="noopener">
             <svg viewBox="0 0 448 512" aria-hidden="true"><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>
             LinkedIn
           </a>
-          <a class="contact__link" href="https://github.com/Anas-Selim1" target="_blank" rel="noopener">
+          <a class="chip" href="https://github.com/Anas-Selim1" target="_blank" rel="noopener">
             <svg viewBox="0 0 496 512" aria-hidden="true"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.4 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8z"/></svg>
             GitHub
           </a>
-          <a class="contact__link contact__link--gold" href="assets/Anas_Selim_CV.pdf" target="_blank" rel="noopener">
+          <a class="chip" href="assets/Anas_Selim_CV.pdf" target="_blank" rel="noopener">
             <svg viewBox="0 0 384 512" aria-hidden="true"><path d="M64 0C28.7 0 0 28.7 0 64V448c0 35.3 28.7 64 64 64H320c35.3 0 64-28.7 64-64V160H256c-17.7 0-32-14.3-32-32V0H64zM256 0V128H384L256 0zM216 232V334.1l31-31c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9l-72 72c-9.4 9.4-24.6 9.4-33.9 0l-72-72c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l31 31V232c0-13.3 10.7-24 24-24s24 10.7 24 24z"/></svg>
             Download CV
           </a>
@@ -330,8 +333,10 @@
   </main>
 
   <footer class="footer">
-    <p>© 2026 Anas Eslam Selim · Al-Khobar, Saudi Arabia</p>
-    <p class="footer__built">Built with HTML, CSS, JavaScript and Three.js</p>
+    <div class="container footer__inner">
+      <p>© 2026 Anas Eslam Selim</p>
+      <p>Al-Khobar, Saudi Arabia</p>
+    </div>
   </footer>
 
   <!-- Lightbox -->
@@ -343,6 +348,5 @@
 
   <script src="js/main.js" defer></script>
   <script src="js/playground.js" defer></script>
-  <script type="module" src="js/hero3d.js"></script>
 </body>
 </html>
