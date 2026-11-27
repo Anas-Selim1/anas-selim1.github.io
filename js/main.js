@@ -300,7 +300,18 @@
       .fromTo(v, { v: 0 }, { v: 2.5, duration: 1.3, ease: 'power3.out', onUpdate: function () { el.textContent = v.v.toFixed(1); }, onComplete: function () { el.textContent = '2.5'; } }, 0.1)
       .from('.phone', { y: 100, rotate: 5, opacity: 0, duration: 1, ease: 'expo.out' }, 0.1);
     var sec = $('#oncam');
-    addStop('oncam', function () { return absTop(sec); });
+    var inner = $('.oncam__inner');
+    addStop('oncam', function () {
+      // Centre the content when it fits on screen, otherwise start just below the HUD
+      var free = window.innerHeight - inner.offsetHeight;
+      return absTop(inner) - (free > 140 ? free / 2 : 72);
+    });
+    // On narrow screens the phone sits below the copy: give it its own stop
+    var phone = $('.phone');
+    addStop('oncam', function () {
+      var free = window.innerHeight - inner.offsetHeight;
+      return free > 140 ? absTop(inner) - free / 2 : absTop(phone) - Math.max(72, (window.innerHeight - phone.offsetHeight) / 2);
+    });
   })();
 
   /* ---------- SCENE 07 · Trophy room ---------- */
