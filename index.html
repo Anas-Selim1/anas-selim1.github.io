@@ -45,16 +45,29 @@
     <a class="hud__logo" href="#top" aria-label="Back to the start">A<span>.</span>S<span>.</span></a>
     <p class="hud__scene" aria-live="off"><span class="rec" aria-hidden="true"></span><span id="hud-scene">Scene 01 · Opening</span></p>
     <nav class="hud__nav" aria-label="Quick links">
-      <a href="#sat">SAT</a>
-      <a href="#trophies">Athletics</a>
-      <a href="#credits">Contact</a>
+      <button class="hud__quick" type="button" data-quick>60-second view</button>
       <a class="hud__cv" href="assets/Anas_Selim_CV.pdf" target="_blank" rel="noopener">CV ↗</a>
     </nav>
   </header>
-  <div class="timeline" aria-hidden="true">
-    <span class="timeline__fill" id="timeline-fill"></span>
-    <span class="timeline__code" id="timecode">00:00:00:00</span>
-  </div>
+
+  <!-- Chapter bar: jump to any part of the story, or step through it with Next -->
+  <nav class="chapters" id="chapters" aria-label="Chapters">
+    <div class="chapters__progress" aria-hidden="true"><span id="progress-fill"></span></div>
+    <ol class="chapters__list">
+      <li><a href="#hero" data-ch="hero"><span class="n">01</span><span class="t">Opening</span></a></li>
+      <li><a href="#prologue" data-ch="prologue"><span class="n">02</span><span class="t">Leaving home</span></a></li>
+      <li><a href="#climb" data-ch="climb"><span class="n">03</span><span class="t">GPA</span></a></li>
+      <li><a href="#sat" data-ch="sat"><span class="n">04</span><span class="t">SAT</span></a></li>
+      <li><a href="#oncam" data-ch="oncam"><span class="n">05</span><span class="t">On camera</span></a></li>
+      <li><a href="#trophies" data-ch="trophies"><span class="n">06</span><span class="t">Trophies</span></a></li>
+      <li><a href="#character" data-ch="character"><span class="n">07</span><span class="t">Graduation</span></a></li>
+      <li><a href="#credits" data-ch="credits"><span class="n">08</span><span class="t">Contact</span></a></li>
+    </ol>
+    <div class="chapters__ctrl">
+      <button class="chapters__prev" id="prev" type="button" aria-label="Previous scene">◂</button>
+      <button class="chapters__next is-hint" id="next" type="button"><span class="chapters__next-label">Next</span> <span aria-hidden="true">▸</span></button>
+    </div>
+  </nav>
 
   <main id="top">
 
@@ -79,7 +92,10 @@
           <div><dt>SAT Math</dt><dd>410 <b>→</b> 800</dd></div>
           <div><dt>Class of</dt><dd>2026</dd></div>
         </dl>
-        <a class="hero__cue" href="#prologue">Scroll to play <span aria-hidden="true">▸</span></a>
+        <div class="hero__actions">
+          <button class="btn-play" type="button" data-next><span class="btn-play__icon" aria-hidden="true"></span>Play the story</button>
+          <button class="btn-quick" type="button" data-quick>60-second view</button>
+        </div>
       </div>
     </section>
 
@@ -310,13 +326,36 @@
     </section>
   </main>
 
+  <!-- 60-second view: every key fact on one screen -->
+  <dialog class="quick" id="quick" aria-labelledby="quick-title">
+    <div class="quick__inner">
+      <button class="quick__close" type="button" data-close aria-label="Close">×</button>
+      <p class="card-title">In 60 seconds</p>
+      <h2 class="quick__title" id="quick-title">Anas Eslam Selim</h2>
+      <p class="quick__story">Left the Aramco schools in 2023, started over at a new school, and improved every single year after that.</p>
+      <ul class="quick__grid">
+        <li><span>GPA</span><b>2.67 → 3.89</b><i>Grade 10 to Grade 12 · 96.32% average in Grade 12</i></li>
+        <li><span>SAT Math</span><b>410 → 800</b><i>Perfect score, above the 99th percentile</i></li>
+        <li><span>SAT Superscore</span><b>1310</b><i>510 Reading &amp; Writing + 800 Math</i></li>
+        <li><span>Athletics</span><b>Most Athletic</b><i>Class of 2026 · Volleyball Best Player · SAYSO Champion</i></li>
+        <li><span>On camera</span><b>2.5M views</b><i>Paid SFA Domes sports campaign, Sep 2025</i></li>
+        <li><span>School</span><b>Class of 2026</b><i>Manarat Al-Khobar International School · Cognia-accredited American diploma</i></li>
+      </ul>
+      <div class="quick__actions">
+        <a class="quick__cta" href="assets/Anas_Selim_CV.pdf" target="_blank" rel="noopener">Download CV ↗</a>
+        <a href="mailto:anaoosa1121@gmail.com">Email ↗</a>
+        <a href="https://www.linkedin.com/in/anas-selim1/" target="_blank" rel="noopener">LinkedIn ↗</a>
+        <button type="button" data-close data-watch>Watch the story ▸</button>
+      </div>
+    </div>
+  </dialog>
+
   <footer class="footer">
     <p>© 2026 Anas Eslam Selim · Al-Khobar, Saudi Arabia</p>
   </footer>
 
   <script src="js/vendor/gsap.min.js" defer></script>
   <script src="js/vendor/ScrollTrigger.min.js" defer></script>
-  <script src="js/vendor/lenis.min.js" defer></script>
   <script src="js/main.js" defer></script>
 </body>
 </html>

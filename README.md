@@ -10,8 +10,8 @@ A scroll-driven, cinematic portfolio told in nine scenes: leaving the Aramco sch
 |------|------------|
 | `index.html` | The whole film, scene by scene (each scene is a `<section data-scene>`) |
 | `css/style.css` | Design: ink black, paper white and signal orange; Big Shoulders Display, Instrument Serif, JetBrains Mono |
-| `js/main.js` | Opening slate, pinned scroll scenes, counters, horizontal trophy room, video controls |
-| `js/vendor/` | GSAP 3.12.5 + ScrollTrigger (GSAP standard license) and Lenis 1.1.13 (MIT), stored locally |
+| `js/main.js` | Beat-based scenes (numbers always land on real values), chapter bar, Next/Previous and keyboard, 60-second view, video controls |
+| `js/vendor/` | GSAP 3.12.5 + ScrollTrigger (GSAP standard license), stored locally |
 | `assets/video/` | Hero loop and the SFA Domes campaign video |
 | `assets/img/` | Photos, film stills from the campaign, favicon, social-share image |
 | `assets/Anas_Selim_CV.pdf` | Downloadable CV |
@@ -25,5 +25,6 @@ Settings → Pages → Deploy from a branch → `main` / root. The site goes liv
 ## Updating content
 
 - Text: edit `index.html`.
-- Numbers that animate (GPA, SAT, views) are also set in `js/main.js`; change both places.
+- Numbers that animate (GPA, SAT, superscore, views) are also set in `js/main.js`; change both places.
+- Keyboard: arrows, Space and Page Up/Down step through the story; Home/End jump to the start/end.
 - Photos: replace files in `assets/img/` with the same names.
