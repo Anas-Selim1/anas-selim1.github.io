@@ -1,6 +1,6 @@
-# Anas Eslam Selim · Portfolio
+# Anas Eslam Selim · Portfolio: "The Comeback"
 
-Personal portfolio website: a clean, fast story of academics, athletics, service and a growing interest in programming.
+A scroll-driven, cinematic portfolio told in nine scenes: leaving the Aramco schools, the GPA climb from 2.67 to 3.89, SAT Math from 410 to 800, the SAT superscore, the SFA Domes campaign, the trophy room, character, graduation and end credits.
 
 **Live site:** https://anas-selim1.github.io
 
@@ -8,29 +8,22 @@ Personal portfolio website: a clean, fast story of academics, athletics, service
 
 | Path | What it is |
 |------|------------|
-| `index.html` | The whole page: hero, four story chapters, graduation, contact |
-| `css/style.css` | Design: Graphite palette (near-black, grey gradient, off-white type), layout, subtle animations |
-| `js/playground.js` | Serve simulator: real projectile physics on a volleyball court |
-| `js/main.js` | Scroll reveals, counters, photo viewer |
-| `assets/img/` | Edited photos (WebP + JPG), favicon, social-share image |
+| `index.html` | The whole film, scene by scene (each scene is a `<section data-scene>`) |
+| `css/style.css` | Design: ink black, paper white and signal orange; Big Shoulders Display, Instrument Serif, JetBrains Mono |
+| `js/main.js` | Opening slate, pinned scroll scenes, counters, horizontal trophy room, video controls |
+| `js/vendor/` | GSAP 3.12.5 + ScrollTrigger (GSAP standard license) and Lenis 1.1.13 (MIT), stored locally |
+| `assets/video/` | Hero loop and the SFA Domes campaign video |
+| `assets/img/` | Photos, film stills from the campaign, favicon, social-share image |
 | `assets/Anas_Selim_CV.pdf` | Downloadable CV |
 
-## Publish on GitHub Pages (about 5 minutes)
+Without JavaScript, or with "reduce motion" turned on, every scene shows as a normal readable section.
 
-1. Sign in to GitHub as **Anas-Selim1**.
-2. Create a new **public** repository named exactly **`anas-selim1.github.io`**.
-3. Click **uploading an existing file**, drag in everything from this folder (keep the folders), and click **Commit changes**.
-4. Open **Settings → Pages**. Under *Build and deployment* choose **Deploy from a branch**, branch **main**, folder **/ (root)**, then **Save**.
-5. After a minute or two the site is live at **https://anas-selim1.github.io**. That is the link already printed on the CV.
+## Publish on GitHub Pages
 
-If you name the repository something else (for example `portfolio`), the address becomes `https://anas-selim1.github.io/portfolio/`. Update the CV link to match.
+Settings → Pages → Deploy from a branch → `main` / root. The site goes live at https://anas-selim1.github.io a minute or two after each push to `main`.
 
 ## Updating content
 
-- Text: edit `index.html`. Each section is marked with a comment such as `CHAPTER 02 · ATHLETICS`.
+- Text: edit `index.html`.
+- Numbers that animate (GPA, SAT, views) are also set in `js/main.js`; change both places.
 - Photos: replace files in `assets/img/` with the same names.
-- CV: replace `assets/Anas_Selim_CV.pdf`.
-
-## Credits
-
-Built with plain HTML, CSS and JavaScript, no frameworks. Icons from Font Awesome Free (CC BY 4.0).
